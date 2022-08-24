@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GroupBy</title>
+</head>
+<body>
+Rooms:
+<ul>
+{% for room in rooms %}
+<li>{{ room }}</li>
+{% endfor %}
+</ul>
+Reservations:
+<ul>
+{% for reserv in reservations %}
+    <li>{{ reserv.room_id }}, Сдавалась: {{ reserv.count }} раза, средняя цена аренды: {{ reserv.avg_price }} рублей</li>
+{% endfor %}
+</ul>
+</body>
+</html>

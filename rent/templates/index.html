@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<h2>Index Page</h2>
+<ol>
+{% for room in rooms %}
+    <li>{{ room.address }}, {{ room.avg }}</li>
+{% endfor %}
+</ol>
+Средняя цена: {{ avg }}
+</body>
+</html>
