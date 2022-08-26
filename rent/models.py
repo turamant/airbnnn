@@ -22,7 +22,7 @@ class Profile(models.Model):
     '''User - сущность клиент'''
 
     class Meta:
-        db_table = 'user'
+        db_table = 'users'
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     email = models.EmailField()
@@ -49,7 +49,7 @@ class Room(models.Model):
     '''Room - сущность арендное жилье'''
 
     class Meta:
-        db_table = 'room'
+        db_table = 'rooms'
 
     home_type = models.CharField(choices=ROOM_CHOICES, max_length=1)
     address = models.CharField(max_length=100)
@@ -71,7 +71,7 @@ class Reservation(models.Model):
     '''Reservation - История бронирования жилья'''
 
     class Meta:
-        db_table = 'reservation'
+        db_table = 'reservations'
 
     user_id = models.ForeignKey(Profile,
                                 on_delete=models.CASCADE)
@@ -89,7 +89,7 @@ class Review(models.Model):
     '''Review - отзывы на арендное жилье'''
 
     class Meta:
-        db_table = 'review'
+        db_table = 'reviews'
     reservation_id = models.ForeignKey(Reservation,
                                        on_delete=models.CASCADE)
     rating = models.PositiveIntegerField()
